@@ -1,12 +1,9 @@
-import { useState } from "react";
-
-export function Header() {
-  const [likes, setLikes] = useState(0);
-
+export function Header({ setPage }) {
   return (
-    <div>
+    <header>
       <div id="Elternelement1">
         <img
+          onClick={() => setPage(0)}
           src="https://www.fhnw.ch/plattformen/soziale-arbeit-geschichte/wp-content/uploads/sites/266/fhnw-social-media-sharing-gelb-1920x1440-c-default.jpg"
           alt="Beispielbild"
           width="150"
@@ -18,12 +15,12 @@ export function Header() {
         </div>
       </div>
       <div id="Elternelement2">
-        <button onClick={() => setLikes(likes + 1)}>Das Projekt</button>
-        <button onClick={() => setLikes(likes - 1)}>Die Fokusfrage</button>
-        <button onClick={() => setLikes(likes - 1)}>
+        <button onClick={() => setPage(0)}>Das Projekt</button>
+        <button onClick={() => setPage(1)}>Die Fokusfrage</button>
+        <button onClick={() => setPage(2)}>
           Die Erkundung des Datensatzes
         </button>
       </div>
-    </div>
+    </header>
   );
 }
