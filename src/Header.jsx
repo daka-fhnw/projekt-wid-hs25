@@ -10,9 +10,7 @@ export function Header({ setPage }) {
           height="100"
           title="Beispiel Tooltip"
         />
-        <div id="Ueberschrift">
-          Passantenfrequenz entlang der Bahnhofsstrasse Zürich
-        </div>
+        <h1>Passantenfrequenz entlang der Bahnhofsstrasse Zürich</h1>
       </div>
       <div id="Elternelement2">
         <button onClick={() => setPage(0)}>Das Projekt</button>
