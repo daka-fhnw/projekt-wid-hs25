@@ -1,5 +1,6 @@
-import { Header } from "./Header.jsx";
 import "./App.css";
+import { Header } from "./Header.jsx";
+import { Chart } from "./Chart.jsx";
 import { useState } from "react";
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       <Header setPage={setPage} />
       <main>
         {page === 0 && <div>Page 1</div>}
-        {page === 1 && <div>Page 2</div>}
+        {page === 1 && <Chart />}
         {page === 2 && <div>Page 3</div>}
       </main>
     </>
