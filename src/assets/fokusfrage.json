@@ -1,0 +1,91 @@
+{
+  "config": {
+    "view": {
+      "continuousWidth": 300,
+      "continuousHeight": 300
+    }
+  },
+  "data": {
+    "name": "data-e47c0ee914212473ad6b7a0a62084210"
+  },
+  "mark": {
+    "type": "bar"
+  },
+  "encoding": {
+    "color": {
+      "field": "location_name",
+      "legend": null,
+      "type": "nominal"
+    },
+    "x": {
+      "axis": {
+        "title": "Gebietsnamen",
+        "titleFontSize": 14,
+        "labelFontSize": 12,
+        "labelAngle": 0
+      },
+      "field": "location_name",
+      "type": "nominal"
+    },
+    "y": {
+      "axis": {
+        "title": "Anteil Kinder",
+        "titleFontSize": 14,
+        "labelFontSize": 12,
+        "format": ".0%"
+      },
+      "field": "kinder_anteil",
+      "type": "quantitative"
+    }
+  },
+  "height": 360,
+  "title": {
+    "text": [
+      "Im April 2024 waren an der Bahnhofstrasse S\u00fcd",
+      "die meisten Kinder unterwegs."
+    ],
+    "fontSize": 20
+  },
+  "width": 620,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
+  "datasets": {
+    "data-e47c0ee914212473ad6b7a0a62084210": [
+      {
+        "location_id": 329,
+        "location_name": "Bahnhofstrasse (Mitte)",
+        "adult_pedestrians_count": 50362832,
+        "child_pedestrians_count": 851829,
+        "pedestrians_count": 51214661,
+        "kinder_anteil": 0.016632522472422497,
+        "erwachsenen_anteil": 0.9833674775275775
+      },
+      {
+        "location_id": 330,
+        "location_name": "Bahnhofstrasse (S\u00fcd)",
+        "adult_pedestrians_count": 26552034,
+        "child_pedestrians_count": 3671016,
+        "pedestrians_count": 30223050,
+        "kinder_anteil": 0.12146411431010437,
+        "erwachsenen_anteil": 0.8785358856898956
+      },
+      {
+        "location_id": 331,
+        "location_name": "Bahnhofstrasse (Nord)",
+        "adult_pedestrians_count": 33012593,
+        "child_pedestrians_count": 304055,
+        "pedestrians_count": 33316648,
+        "kinder_anteil": 0.0091262182197921,
+        "erwachsenen_anteil": 0.9908737817802079
+      },
+      {
+        "location_id": 670,
+        "location_name": "Lintheschergasse",
+        "adult_pedestrians_count": 5355653,
+        "child_pedestrians_count": 57427,
+        "pedestrians_count": 5413080,
+        "kinder_anteil": 0.010608932437724919,
+        "erwachsenen_anteil": 0.9893910675622751
+      }
+    ]
+  }
+}

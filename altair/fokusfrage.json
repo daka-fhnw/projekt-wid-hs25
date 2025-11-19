@@ -6,7 +6,7 @@
     }
   },
   "data": {
-    "name": "data-2cc484847179d1328190f4e2f3fce82a"
+    "name": "data-e47c0ee914212473ad6b7a0a62084210"
   },
   "mark": {
     "type": "bar"
@@ -49,14 +49,15 @@
   "width": 620,
   "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
   "datasets": {
-    "data-2cc484847179d1328190f4e2f3fce82a": [
+    "data-e47c0ee914212473ad6b7a0a62084210": [
       {
         "location_id": 329,
         "location_name": "Bahnhofstrasse (Mitte)",
         "adult_pedestrians_count": 50362832,
         "child_pedestrians_count": 851829,
         "pedestrians_count": 51214661,
-        "kinder_anteil": 0.016632522472422497
+        "kinder_anteil": 0.016632522472422497,
+        "erwachsenen_anteil": 0.9833674775275775
       },
       {
         "location_id": 330,
@@ -64,7 +65,8 @@
         "adult_pedestrians_count": 26552034,
         "child_pedestrians_count": 3671016,
         "pedestrians_count": 30223050,
-        "kinder_anteil": 0.12146411431010437
+        "kinder_anteil": 0.12146411431010437,
+        "erwachsenen_anteil": 0.8785358856898956
       },
       {
         "location_id": 331,
@@ -72,7 +74,8 @@
         "adult_pedestrians_count": 33012593,
         "child_pedestrians_count": 304055,
         "pedestrians_count": 33316648,
-        "kinder_anteil": 0.0091262182197921
+        "kinder_anteil": 0.0091262182197921,
+        "erwachsenen_anteil": 0.9908737817802079
       },
       {
         "location_id": 670,
@@ -80,7 +83,8 @@
         "adult_pedestrians_count": 5355653,
         "child_pedestrians_count": 57427,
         "pedestrians_count": 5413080,
-        "kinder_anteil": 0.010608932437724919
+        "kinder_anteil": 0.010608932437724919,
+        "erwachsenen_anteil": 0.9893910675622751
       }
     ]
   }
