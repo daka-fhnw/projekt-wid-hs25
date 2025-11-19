@@ -1,10 +1,12 @@
+import logo from "./assets/FHNW_Logo.jpg";
+
 export function Header({ setPage }) {
   return (
     <header>
       <div id="Elternelement1">
         <img
           onClick={() => setPage(0)}
-          src="https://www.fhnw.ch/plattformen/soziale-arbeit-geschichte/wp-content/uploads/sites/266/fhnw-social-media-sharing-gelb-1920x1440-c-default.jpg"
+          src={logo}
           alt="Beispielbild"
           width="150"
           height="100"
