@@ -11,14 +11,14 @@ header img {
   cursor: pointer;
 }
 
-header #Elternelement1 {
+header .elternelement1 {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
 
-header #Elternelement2 {
+header .elternelement2 {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
