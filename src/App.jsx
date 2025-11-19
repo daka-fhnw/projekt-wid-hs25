@@ -10,7 +10,7 @@ function App() {
   const [page, setPage] = useState(0);
   return (
     <>
-      <Header setPage={setPage} />
+      <Header page={page} setPage={setPage} />
       <main>
         {page === 0 && <Start />}
         {page === 1 && <Fokusfrage />}

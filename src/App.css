@@ -30,7 +30,12 @@ header button {
   border: 0;
   background-color: transparent;
   font-weight: bold;
+  font-size: 1.2rem;
   cursor: pointer;
+  border-bottom: 5px solid transparent;
+}
+header button.active {
+  border-color: black;
 }
 /* Veränderung Button bei Berührung mit Pfeil */
 header button:hover {
