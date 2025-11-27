@@ -13,6 +13,7 @@
     "leaflet": "^1.9.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-leaflet": "^5.0.0",
     "react-vega": "^8.0.0",
     "vega-embed": "^7.1.0",
     "vega-lite": "^6.4.1"

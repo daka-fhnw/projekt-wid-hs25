@@ -1,4 +1,5 @@
 import "./App.css";
+import "leaflet/dist/leaflet.css";
 
 import { useState } from "react";
 import { Header } from "./Header.jsx";

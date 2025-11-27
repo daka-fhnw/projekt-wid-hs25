@@ -42,30 +42,20 @@ header button:hover {
   background-color: rgb(247, 200, 0);
 }
 
-.Ueberschrift {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.Text {
-  font-size: 1rem;
-}
-
-.Bildueberschrift {
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.Bildtext {
-  font-size: 1rem;
-  font-style: italic;
-}
-
-.Bildquelle {
-  font-size: 0.8rem;
-  font-style: italic;
-}
-
 main {
   padding: 1rem;
+}
+
+h4.bildueberschrift {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.bildtext {
+  font-style: italic;
+}
+
+.bildquelle {
+  font-size: 0.8rem;
+  font-style: italic;
 }
