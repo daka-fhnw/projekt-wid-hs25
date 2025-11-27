@@ -31,7 +31,7 @@
       },
       "properties": {
         "hystreet_location_id": 329,
-        "name": "Bahnhofstrasse (Mitte)",
+        "name": "Bahnhofstrasse Mitte",
         "city": "Zürich"
       }
     },
@@ -56,7 +56,7 @@
       },
       "properties": {
         "hystreet_location_id": 330,
-        "name": "Bahnhofstrasse (Süd)",
+        "name": "Bahnhofstrasse Süd",
         "city": "Zürich"
       }
     },
@@ -85,7 +85,7 @@
       },
       "properties": {
         "hystreet_location_id": 331,
-        "name": "Bahnhofstrasse (Nord)",
+        "name": "Bahnhofstrasse Nord",
         "city": "Zürich"
       }
     },
