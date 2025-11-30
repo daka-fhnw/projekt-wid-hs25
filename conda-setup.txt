@@ -1,0 +1,3 @@
+conda create -n projekt-wid-hs25
+conda activate projekt-wid-hs25
+conda install -c conda-forge altair-all pandas fastapi fastapi-cli

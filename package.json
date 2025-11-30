@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "npm run dev --prefix ./frontend",
+    "backend": "(cd backend && fastapi dev main.py)",
+    "frontend": "npm run dev --prefix ./frontend",
     "postinstall": "npm install --prefix ./frontend"
   }
 }
