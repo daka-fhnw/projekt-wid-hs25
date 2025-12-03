@@ -10,11 +10,10 @@
       "labelFontWeight": "normal",
       "titleFontSize": 14,
       "titleFontWeight": "bold"
-    },
-    "tooltipFormat": {}
+    }
   },
   "data": {
-    "name": "data-ba7decc5d3b254005301159cf232380b"
+    "name": "values"
   },
   "mark": {
     "type": "bar",
@@ -66,34 +65,34 @@
   },
   "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
   "datasets": {
-    "data-ba7decc5d3b254005301159cf232380b": [
+    "values": [
       {
         "Standorte": "Bahnhofstrasse (Mitte)",
-        "Anzahl Erwachsene": 1139624,
-        "Anzahl Kinder": 21499,
-        "Total": 1161123,
-        "Anteil Kinder": 0.01851569558091606
+        "Anzahl Erwachsene": 13525360,
+        "Anzahl Kinder": 220881,
+        "Total": 13746241,
+        "Anteil Kinder": 0.016068465553601162
       },
       {
         "Standorte": "Bahnhofstrasse (Nord)",
-        "Anzahl Erwachsene": 894808,
-        "Anzahl Kinder": 7313,
-        "Total": 902121,
-        "Anteil Kinder": 0.008106451351869649
+        "Anzahl Erwachsene": 6156714,
+        "Anzahl Kinder": 48271,
+        "Total": 6204985,
+        "Anteil Kinder": 0.007779390280556682
       },
       {
         "Standorte": "Bahnhofstrasse (S\u00fcd)",
-        "Anzahl Erwachsene": 691749,
-        "Anzahl Kinder": 21901,
-        "Total": 713650,
-        "Anteil Kinder": 0.030688712954529532
+        "Anzahl Erwachsene": 7824223,
+        "Anzahl Kinder": 264970,
+        "Total": 8089193,
+        "Anteil Kinder": 0.032756048718333215
       },
       {
         "Standorte": "Lintheschergasse",
-        "Anzahl Erwachsene": 326362,
-        "Anzahl Kinder": 3436,
-        "Total": 329798,
-        "Anteil Kinder": 0.010418498596110347
+        "Anzahl Erwachsene": 182687,
+        "Anzahl Kinder": 1892,
+        "Total": 184579,
+        "Anteil Kinder": 0.010250353507170372
       }
     ]
   }

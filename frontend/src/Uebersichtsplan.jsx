@@ -3,22 +3,22 @@ import L from "leaflet";
 import { useEffect, useState } from "react";
 
 export function Uebersichtsplan() {
-  const [mapData, setMapData] = useState([]);
+  const [data, setData] = useState([]);
   const [state, setState] = useState("");
   useEffect(() => {
     // Nutzer informieren, dass Daten geladen werden
     setState("loading");
     // Laden der Standort-Polygone vom Backend als GeoJSON
-    fetch("http://localhost:8000/locations")
+    fetch("http://localhost:8000/standorte")
       .then((response) => response.json())
-      .then((data) => {
+      .then((json) => {
         // Konvertierung der GeoJSON-Koordinaten in Leaflet-Positionen
-        const converted = data.features.map((feature) => ({
+        const converted = json.features.map((feature) => ({
           name: feature.properties.name,
           positions: L.GeoJSON.coordsToLatLngs(feature.geometry.coordinates[0]),
         }));
         // Geladene und konvertierte Daten im useState speichern
-        setMapData(converted);
+        setData(converted);
         // Nutzer informieren, dass Daten erfolgreich geladen wurden
         setState("success");
       })
@@ -47,7 +47,7 @@ export function Uebersichtsplan() {
           }
         />
 
-        {mapData.map((data, index) => (
+        {data.map((data, index) => (
           <Polygon
             key={index}
             positions={data.positions}
