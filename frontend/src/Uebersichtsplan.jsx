@@ -29,8 +29,12 @@ export function Uebersichtsplan() {
   }, []);
   return (
     <>
-      {state === "loading" && <div>Daten werden geladen...</div>}
-      {state === "failed" && <div>Laden der Daten fehlgeschlagen!</div>}
+      {state === "loading" && (
+        <div className="meldung info">Daten werden geladen...</div>
+      )}
+      {state === "failed" && (
+        <div className="meldung fehler">Laden der Daten fehlgeschlagen!</div>
+      )}
       <MapContainer
         center={[47.3721, 8.5393]}
         zoom={15}

@@ -9,14 +9,15 @@ export function Fokusfrage() {
   useEffect(() => {
     // Nutzer informieren, dass Daten geladen werden
     setState("loading");
+    // Auch Antwort zurücksetzen
+    setAnswer(null);
     // Laden der Standort-Polygone vom Backend als GeoJSON
     fetch("http://localhost:8000/fokusfrage")
       .then((response) => response.json())
       .then((json) => {
         // Geladene Daten im useState speichern
         setData(json);
-        // Antwort auf die Frage suchen:
-        // Standort im Eintrag mit dem höchsten Anteil Kinder
+        // Antwort auf die Frage suchen: Eintrag mit dem höchsten Anteil Kinder
         setAnswer(
           json.reduce((maximum, current) =>
             current["Anteil Kinder"] > maximum["Anteil Kinder"]
@@ -30,8 +31,6 @@ export function Fokusfrage() {
       .catch(() => {
         // Nutzer informieren, dass Daten nicht geladen werden konnten
         setState("failed");
-        // Auch Antwort zurücksetzen
-        setAnswer(null);
       });
   }, []);
   // Für dynamische Daten zweiten Ansatz von react-vega mit useVegaEmbed nutzen
@@ -51,8 +50,12 @@ export function Fokusfrage() {
           {(answer["Anteil Kinder"] * 100).toFixed(1)}%
         </p>
       )}
-      {state === "loading" && <div>Daten werden geladen...</div>}
-      {state === "failed" && <div>Laden der Daten fehlgeschlagen!</div>}
+      {state === "loading" && (
+        <div className="meldung info">Daten werden geladen...</div>
+      )}
+      {state === "failed" && (
+        <div className="meldung fehler">Laden der Daten fehlgeschlagen!</div>
+      )}
       <div ref={ref} />
     </>
   );

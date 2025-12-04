@@ -59,3 +59,21 @@ h4.bildueberschrift {
   font-size: 0.8rem;
   font-style: italic;
 }
+
+.meldung {
+  margin: 1rem 0;
+  padding: 0.7rem;
+  border: 1px solid black;
+}
+
+.info {
+  background-color: #d2e3ff;
+}
+
+.warnung {
+  background-color: #fdf2cd;
+}
+
+.fehler {
+  background-color: #f5d6da;
+}
