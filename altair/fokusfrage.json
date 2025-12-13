@@ -5,11 +5,8 @@
       "continuousHeight": 300
     },
     "axis": {
-      "labelAngle": 0,
-      "labelFontSize": 12,
-      "labelFontWeight": "normal",
-      "titleFontSize": 14,
-      "titleFontWeight": "bold"
+      "labelFontSize": 15,
+      "titleFontSize": 17
     }
   },
   "data": {
@@ -28,26 +25,32 @@
       },
       {
         "field": "Anzahl Kinder",
-        "format": "i",
+        "format": ",",
         "type": "quantitative"
       },
       {
         "field": "Anzahl Erwachsene",
-        "format": "i",
+        "format": ",",
         "type": "quantitative"
       },
       {
-        "field": "Total",
-        "format": "i",
+        "field": "Anzahl Passanten",
+        "format": ",",
         "type": "quantitative"
       }
     ],
     "x": {
       "axis": {
         "labelAngle": -45,
-        "labelOffset": 14
+        "labelOffset": 20.0
       },
-      "field": "Standorte",
+      "field": "Standort",
+      "sort": [
+        "Bahnhofstrasse (Nord)",
+        "Bahnhofstrasse (Mitte)",
+        "Bahnhofstrasse (S\u00fcd)",
+        "Lintheschergasse"
+      ],
       "type": "nominal"
     },
     "y": {
@@ -61,38 +64,38 @@
   },
   "height": 400,
   "width": {
-    "step": 120.0
+    "step": 112.0
   },
   "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json",
   "datasets": {
     "values": [
       {
-        "Standorte": "Bahnhofstrasse (Mitte)",
-        "Anzahl Erwachsene": 13525360,
-        "Anzahl Kinder": 220881,
-        "Total": 13746241,
-        "Anteil Kinder": 0.016068465553601162
+        "Standort": "Bahnhofstrasse (Mitte)",
+        "Anzahl Kinder": 20686,
+        "Anzahl Erwachsene": 1099830,
+        "Anzahl Passanten": 1120516,
+        "Anteil Kinder": 0.01846113754734426
       },
       {
-        "Standorte": "Bahnhofstrasse (Nord)",
-        "Anzahl Erwachsene": 6156714,
-        "Anzahl Kinder": 48271,
-        "Total": 6204985,
-        "Anteil Kinder": 0.007779390280556682
+        "Standort": "Bahnhofstrasse (Nord)",
+        "Anzahl Kinder": 7070,
+        "Anzahl Erwachsene": 866905,
+        "Anzahl Passanten": 873975,
+        "Anteil Kinder": 0.008089476243599646
       },
       {
-        "Standorte": "Bahnhofstrasse (S\u00fcd)",
-        "Anzahl Erwachsene": 7824223,
-        "Anzahl Kinder": 264970,
-        "Total": 8089193,
-        "Anteil Kinder": 0.032756048718333215
+        "Standort": "Bahnhofstrasse (S\u00fcd)",
+        "Anzahl Kinder": 21152,
+        "Anzahl Erwachsene": 669023,
+        "Anzahl Passanten": 690175,
+        "Anteil Kinder": 0.03064729959792806
       },
       {
-        "Standorte": "Lintheschergasse",
-        "Anzahl Erwachsene": 182687,
-        "Anzahl Kinder": 1892,
-        "Total": 184579,
-        "Anteil Kinder": 0.010250353507170372
+        "Standort": "Lintheschergasse",
+        "Anzahl Kinder": 3310,
+        "Anzahl Erwachsene": 313929,
+        "Anzahl Passanten": 317239,
+        "Anteil Kinder": 0.010433773905478205
       }
     ]
   }

@@ -11,8 +11,11 @@ export function Fokusfrage() {
     setState("loading");
     // Auch Antwort zurücksetzen
     setAnswer(null);
-    // Laden der Standort-Polygone vom Backend als GeoJSON
-    fetch("http://localhost:8000/fokusfrage")
+    // Laden der Daten für die Fokusfrage:
+    // Endpunkt "/standorte/kinder-anteil" mit April 2024 als Datumsbereich aufrufen
+    fetch(
+      "http://localhost:8000/standorte/kinder-anteil?datum_von=2024-04-01&datum_bis=2024-04-30"
+    )
       .then((response) => response.json())
       .then((json) => {
         // Geladene Daten im useState speichern
@@ -43,10 +46,13 @@ export function Fokusfrage() {
   return (
     <>
       <h2>Die Fokusfrage</h2>
-      <p>Wo waren im April 2024 anteilsmässig die meisten Kinder unterwegs?</p>
+      <p>
+        An welchem der vier Standorte waren im gesamten April 2024 anteilsmässig
+        die meisten Kinder unterwegs?
+      </p>
       {answer !== null && (
         <p>
-          Antwort: {answer["Standorte"]} mit{" "}
+          <b>Antwort:</b> {answer["Standort"]} mit{" "}
           {(answer["Anteil Kinder"] * 100).toFixed(1)}%
         </p>
       )}
