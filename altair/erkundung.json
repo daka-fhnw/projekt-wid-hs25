@@ -1,0 +1,75 @@
+{
+  "config": {
+    "view": {
+      "continuousWidth": 300,
+      "continuousHeight": 300
+    },
+    "axis": {
+      "labelFontSize": 15,
+      "titleFontSize": 17
+    }
+  },
+  "data": {
+    "name": "values"
+  },
+  "mark": {
+    "type": "bar",
+    "size": 80
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "Anzahl Passanten",
+        "format": ",",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "axis": {
+        "labelAngle": -45,
+        "labelOffset": 20.0
+      },
+      "field": "Standort",
+      "sort": [
+        "Bahnhofstrasse (Nord)",
+        "Bahnhofstrasse (Mitte)",
+        "Bahnhofstrasse (S\u00fcd)",
+        "Lintheschergasse"
+      ],
+      "type": "nominal"
+    },
+    "y": {
+      "axis": {
+        "format": "~s",
+        "tickCount": 7
+      },
+      "field": "Anzahl Passanten",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "width": {
+    "step": 112.0
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json",
+  "datasets": {
+    "values": [
+      {
+        "Standort": "Bahnhofstrasse (Mitte)",
+        "Anzahl Passanten": 705130
+      },
+      {
+        "Standort": "Bahnhofstrasse (Nord)",
+        "Anzahl Passanten": 567071
+      },
+      {
+        "Standort": "Bahnhofstrasse (S\u00fcd)",
+        "Anzahl Passanten": 453965
+      },
+      {
+        "Standort": "Lintheschergasse",
+        "Anzahl Passanten": 223586
+      }
+    ]
+  }
+}
