@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import spec from "./assets/fokusfrage.json";
 
 export function Fokusfrage() {
-  const [data, setData] = useState([]);
+  // verwenden der in der spec vorhandenen Daten als initialer Wert
+  const [data, setData] = useState(spec.datasets.values);
   const [state, setState] = useState("");
   const [answer, setAnswer] = useState(null);
   useEffect(() => {
