@@ -32,9 +32,9 @@ def filtern_nach_stunde(data: pd.DataFrame, stunde_von: int, stunde_bis: int):
 def filtern_nach_temperatur(data: pd.DataFrame, temperatur_von: int, temperatur_bis: int):
     return data[(data['temperature'] >= temperatur_von) & (data['temperature'] <= temperatur_bis)]
 
-# Lädt die GeoJSON-Datei mit den Standorten und gibt sie direkt zurück
-@app.get("/standorte")
-def get_standorte():
+# Lädt die GeoJSON-Datei mit den Polygonen der Standorte und gibt sie direkt zurück
+@app.get("/standorte/polygone")
+def get_standorte_polygone():
     return FileResponse(path='../daten/hystreet_locations.json')
 
 # Gibt für einen Datumsbereich den Anteil Kinder in % und weitere Werte pro Standort zurück

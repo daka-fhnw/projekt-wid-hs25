@@ -9,7 +9,7 @@ export function Uebersichtsplan() {
     // Nutzer informieren, dass Daten geladen werden
     setState("loading");
     // Laden der Standort-Polygone vom Backend als GeoJSON
-    fetch("http://localhost:8000/standorte")
+    fetch("http://localhost:8000/standorte/polygone")
       .then((response) => response.json())
       .then((json) => {
         // Konvertierung der GeoJSON-Koordinaten in Leaflet-Positionen
