@@ -12,6 +12,14 @@ export function Header({ page, setPage }) {
           title="Logo FHNW"
         />
         <h1>Passantenfrequenz entlang der Bahnhofsstrasse Zürich</h1>
+        <div className="leerraum"></div>
+        <div className="gruppe">
+          <b>Gruppe:</b>
+          <br />
+          Gabriel Blaas,
+          <br />
+          Daniel Käser
+        </div>
       </div>
       <div className="elternelement2">
         <button

@@ -9,8 +9,13 @@ header img {
 header .elternelement1 {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
+  padding: 0 0.5rem;
+}
+
+header .elternelement1 .leerraum {
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 header .elternelement2 {
