@@ -1,16 +1,28 @@
 .erkundung {
-  margin-top: 1rem;
-  margin-left: 1rem;
   display: grid;
-  grid-template-columns: 1fr 20rem;
+  grid-template-columns: 1fr auto;
   grid-template-rows: auto;
+  gap: 1rem;
+}
+
+.erkundung h2 {
+  margin-top: 1rem;
 }
 
 .erkundung h3 {
-  margin-top: 0;
+  margin: 0;
+}
+
+.erkundung .diagramm {
+  margin-left: 1rem;
 }
 
 .erkundung .menu {
-  padding: 0.54rem;
+  padding: 1rem 1.5rem;
   background: rgb(254, 243, 135);
+}
+
+.erkundung .menu h4 {
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
 }

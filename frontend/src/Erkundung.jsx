@@ -1,42 +1,50 @@
 import "./Erkundung.css";
 import { useVegaEmbed } from "react-vega";
 import { useEffect, useRef, useState } from "react";
+import { DatePicker } from "@mui/x-date-pickers";
+import Slider from "@mui/material/Slider";
+import dayjs from "dayjs";
 import spec from "./assets/erkundung.json";
+
+function formatDateParam(date) {
+  return date.format("YYYY-MM-DD");
+}
 
 export function Erkundung() {
   // verwenden der in der spec vorhandenen Daten als initialer Wert
   const [data, setData] = useState(spec.datasets.values);
   const [state, setState] = useState("");
-  const [anfangsdatum, setAnfangsdatum] = useState("2022-01-01");
-  const [enddatum, setEnddatum] = useState("2025-12-31");
-  const [anfangszeit, setAnfangszeit] = useState("0");
-  const [endzeit, setEndzeit] = useState("23");
-  const [mintemp, setMintemp] = useState("-20");
-  const [maxtemp, setMaxtemp] = useState("40");
+  const [anfangsdatum, setAnfangsdatum] = useState(dayjs("2020-01-01"));
+  const [enddatum, setEnddatum] = useState(dayjs("2025-12-31"));
+  const [zeiten, setZeiten] = useState([0, 23]);
+  const [temperaturen, setTemperaturen] = useState([-20, 40]);
 
   useEffect(() => {
     // Nutzer informieren, dass Daten geladen werden
     setState("loading");
     // Laden der Daten für die Erkundung
+    // Endpunkt "/standorte/passanten-anzahl" mit Suchparameter aufrufen
     fetch(
-      `http://localhost:8000/standorte/passanten-anzahl` +
-        `?datum_von=${anfangsdatum}` +
-        `&datum_bis=${enddatum}` +
-        `&stunde_von=${anfangszeit}` +
-        `&stunde_bis=${endzeit}` +
-        `&temperatur_von=${mintemp}` +
-        `&temperatur_bis=${maxtemp}`
+      "http://localhost:8000/standorte/passanten-anzahl" +
+        `?datum_von=${formatDateParam(anfangsdatum)}` +
+        `&datum_bis=${formatDateParam(enddatum)}` +
+        `&stunde_von=${zeiten[0]}` +
+        `&stunde_bis=${zeiten[1]}` +
+        `&temperatur_von=${temperaturen[0]}` +
+        `&temperatur_bis=${temperaturen[1]}`
     )
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
+        // Geladene Daten im useState speichern
         setData(json);
+        // Nutzer informieren, dass Daten erfolgreich geladen wurden
         setState("success");
       })
       .catch(() => {
+        // Nutzer informieren, dass Daten nicht geladen werden konnten
         setState("failed");
       });
-  }, [anfangsdatum, enddatum, anfangszeit, endzeit, mintemp, maxtemp]);
+  }, [anfangsdatum, enddatum, zeiten, temperaturen]);
 
   // Für dynamische Daten zweiten Ansatz von react-vega mit useVegaEmbed nutzen
   // (gemäss README auf https://github.com/vega/react-vega)
@@ -48,7 +56,7 @@ export function Erkundung() {
 
   return (
     <div className="erkundung">
-      <div>
+      <div className="diagramm">
         <h2>Die Erkundung</h2>
         {state === "loading" && (
           <div className="meldung info">Daten werden geladen...</div>
@@ -56,116 +64,48 @@ export function Erkundung() {
         {state === "failed" && (
           <div className="meldung fehler">Laden der Daten fehlgeschlagen!</div>
         )}
+        {state === "success" && (
+          <div className="meldung info">Erfolgreich aktualisiert.</div>
+        )}
         <div ref={ref} />
       </div>
-      <div>
-        <div className="menu">
-          <h3>Parameter</h3>
-          <p>
-            <label>Anfangsdatum</label>
-            <br />
-            <input
-              type="date"
-              value={anfangsdatum}
-              onChange={(x) => setAnfangsdatum(x.target.value)}
-            />
-          </p>
-          <p>
-            <label>Enddatum</label>
-            <br />
-            <input
-              type="date"
-              value={enddatum}
-              onChange={(x) => setEnddatum(x.target.value)}
-            />
-          </p>
-          <p>
-            <label>Anfangszeit</label>
-            <br />
-            <select
-              value={anfangszeit}
-              onChange={(x) => setAnfangszeit(x.target.value)}
-            >
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-            </select>
-          </p>
-          <p>
-            <label>Endzeit</label>
-            <br />
-            <select
-              value={endzeit}
-              onChange={(x) => setEndzeit(x.target.value)}
-            >
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-            </select>
-          </p>
-          <p>
-            <label>Min Temperatur</label>
-            <br />
-            <input
-              type="number"
-              step="1"
-              value={mintemp}
-              onChange={(x) => setMintemp(x.target.value)}
-            />
-          </p>
-          <p>
-            <label>Max Temperatur</label>
-            <br />
-            <input
-              type="number"
-              step="1"
-              value={maxtemp}
-              onChange={(x) => setMaxtemp(x.target.value)}
-            />
-          </p>
-        </div>
+
+      <div className="menu">
+        <h3>Parameter</h3>
+
+        <h4>Anfangsdatum</h4>
+        <DatePicker
+          value={anfangsdatum}
+          onChange={(newValue) => setAnfangsdatum(newValue)}
+          sx={{ backgroundColor: "white" }}
+        />
+
+        <h4>Enddatum</h4>
+        <DatePicker
+          value={enddatum}
+          onChange={(newValue) => setEnddatum(newValue)}
+          sx={{ backgroundColor: "white" }}
+        />
+
+        <h4>Stundenbereich</h4>
+        <Slider
+          value={zeiten}
+          onChange={(_event, value) => setZeiten(value)}
+          valueLabelDisplay="auto"
+          sx={{ width: "100%" }}
+          min={0}
+          max={23}
+        />
+
+        <h4>Temperaturbereich</h4>
+        <Slider
+          value={temperaturen}
+          onChange={(_event, value) => setTemperaturen(value)}
+          valueLabelDisplay="auto"
+          sx={{ width: "100%" }}
+          min={-20}
+          max={40}
+        />
       </div>
     </div>
   );
