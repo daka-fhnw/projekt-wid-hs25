@@ -2,7 +2,7 @@
 
 ## Autoren
 
-- Gabriel Blaas (gabriel.blaas@stundetns.fhnw.ch)
+- Gabriel Blaas (gabriel.blaas@students.fhnw.ch)
 - Daniel Käser (daniel.kaeser@students.fhnw.ch)
 
 ## Thema und Kontext
@@ -15,41 +15,78 @@ Die Daten sind frei verfügbar über das [Open Data Portal der Stadt Zürich](ht
 
 ==TODO==
 
-## Setup Entwicklungsumgebung
+## Entwickler-Setup
 
-==TODO==
+Das Entwickler-Setup ist in den Beschreibungen der ensprechenden Unterverzeichnisse zu finden:
+
+- [frontend](#frontend)
+- [backend](#backend)
 
 ## Projektstruktur
 
 Das Projekt ist in vier Unterverzeichnisse unterteilt, die nachfolgend beschrieben werden: [daten](#daten), [frontend](#frontend), [backend](#backend) und [altair](#vega-altair)
 
-### Daten
+## Daten
 
 Im Unterverzeichnis "daten" sind die Grundlagedaten für dieses Projekt abgelegt. Die Daten sind frei verfügbar über das [Open Data Portal der Stadt Zürich](https://data.stadt-zuerich.ch/dataset/hystreet_fussgaengerfrequenzen). Sie werden sowohl im [Backend](#backend) wie auch bei der Gestaltung der Diagramme via [Vega-Altair](#vega-altair) referenziert.
 
-### Frontend
+## Frontend
 
 Im Unterverzeichnis "frontend" liegt die Umsetzung des Applikationsteils, der beim Benutzer im Browser läuft. Es handelt sich um eine Single-Page-Application, die basierend auf [React](https://react.dev/) und [Vite](https://vite.dev/) umgesetzt wurde. [Leaflet](https://leafletjs.com/) wird verwendet, um Karten darzustellen und [Vega](https://vega.github.io/vega/) für die Darstellung von Diagrammen.
 
-#### Abhängigkeiten:
+### Entwickler-Setup
 
-| Bibliothek    | Version\* |
-| :------------ | --------: |
-| leaflet       |     1.9.4 |
-| react         |    19.1.1 |
-| react-leaflet |     5.0.0 |
-| react-vega    |     8.0.0 |
-| vega-embed    |     7.1.0 |
-| vega-lite     |     6.4.1 |
-| vite          |     7.1.7 |
+Um das Frontend starten zu können, muss [Node.js](https://nodejs.org/) installiert sein. Fü die Entwicklung wurde die Version 22.21.0 verwendet. Die Abhängigkeiten können dann über folgenden Befehl installiert werden:
+
+> npm install
+
+Anschliessend kann die Single-Page-Application aus dem Unterverzeichnis "frontend" heraus lokal über folgenden Befehl gestartet werden:
+
+> npm run dev
+
+Alternativ kann aus dem Hauptverzeichnis des Projektes folgender Befehl ausgeführt werden:
+
+> npm run frontend
+
+Bei erfolgreichem Start, kann die Web-Applikation im Browser über folgende URL aufgerufen werden:
+
+> http://localhost:5173/
+
+### Abhängigkeiten
+
+| Bibliothek          | Version\* |
+| :------------------ | --------: |
+| leaflet             |     1.9.4 |
+| react               |    19.1.1 |
+| react-leaflet       |     5.0.0 |
+| react-vega          |     8.0.0 |
+| vega-embed          |     7.1.0 |
+| vega-lite           |     6.4.1 |
+| vite                |     7.1.7 |
+| @mui/material       |     7.3.6 |
+| @mui/x-date-pickers |    8.22.0 |
 
 _\*getestet mit diesen Versionen, andere Versionen funktionieren möglicherweise auch_
 
-### Backend
+## Backend
 
 Im Unterverzeichnis "backend" liegt die Umsetzung der API, die aufbereitete Daten für das [Frontend](#frontend) bereitstellt. Ein Aufbereitung ist notwendig, da der Umfang des Gesamtdatensatzes zu gross ist, um diesen im [Frontend](#frontend) direkt verarbeiten zu können. Das Backend wurde mit [Python](https://www.python.org/) basierend auf [FastAPI](https://fastapi.tiangolo.com/) umgesetzt. Die Bibliothek [pandas](https://pandas.pydata.org/) dient dazu den Gesamtdatensatz zu laden, zu filtern und für die API aufzubereiten. Der Gesamtdatensatz ist im Unterverzeichnis [Daten](#daten) abgelegt.
 
-#### Abhängigkeiten:
+### Entwickler-Setup
+
+Um das Backend starten zu können, müssen [Python](https://www.python.org/) und die im nachfolgenden Abschnitt beschriebenen Abhängigkeiten installiert sein. Für die Entwicklung wurde Python 3.14.0 verwendet. Bei der Verwendung von Miniconda kann die Vorlage in der Datei "conda-setup.txt" im Hauptverzeichnis des Projektes verwendet werden. Aus dem Unterverzeichnis "backend" heraus, kann die Applikation dann mittels folgendem Befehl lokal gestartet werden:
+
+> fastapi dev main.py
+
+Alternativ kann aus dem Hauptverzeichnis des Projektes folgender Befehl ausgeführt werden:
+
+> npm run backend
+
+Bei erfolgreichem Start, kann die REST-API im Browser über folgende URL angezeigt und getestet werden:
+
+> http://localhost:8000/docs
+
+### Abhängigkeiten
 
 | Bibliothek  | Version\* |
 | :---------- | --------: |
@@ -59,11 +96,11 @@ Im Unterverzeichnis "backend" liegt die Umsetzung der API, die aufbereitete Date
 
 _\*getestet mit diesen Versionen, andere Versionen funktionieren möglicherweise auch_
 
-### Vega-Altair
+## Vega-Altair
 
 Im Unterverzeichnis "altair" werden die im [Frontend](#frontend) mittels [Vega](https://vega.github.io/vega/) dargestellten Diagramme vorbereitet. Zur erleichterten Konfiguration der Diagramme wurde die Python-Bibliothek [Vega-Altair](https://altair-viz.github.io/) eingesetzt. Dazu wurden verschiedene [Jupyter Notebooks](https://jupyter.org/) erstellt, um das interaktive Experimentieren mit den Daten zu erleichtern. Zur Aufbereitung der Daten wurde die Python-Bibliothek [pandas](https://pandas.pydata.org/) verwendet. Am Ende der Jupyter Notebooks wird jeweils eine JSON-Datei generiert, die dann in Vega als "spec" verwendet werden kann.
 
-#### Abhängigkeiten:
+### Abhängigkeiten
 
 | Bibliothek | Version\* |
 | :--------- | --------: |
