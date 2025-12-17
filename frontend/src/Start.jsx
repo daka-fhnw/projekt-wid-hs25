@@ -1,3 +1,4 @@
+import "./Start.css";
 import foto_laserscanner from "./assets/Laserscanner.png";
 import foto_bahnhofsstrasse_mitte from "./assets/Bahnhofsstrasse_Mitte.png";
 import foto_bahnhofsstrasse_nord from "./assets/Bahnhofsstrasse_Nord.png";
@@ -8,7 +9,7 @@ import { Uebersichtsplan } from "./Uebersichtsplan.jsx";
 
 export function Start() {
   return (
-    <>
+    <div className="start">
       <h2>Das Projekt</h2>
       <p>
         Seit 2021 erhebt die Stadt Zürich mit Hilfe von Laserscannern die
@@ -112,6 +113,6 @@ export function Start() {
 
       <h4 className="bildueberschrift">Übersichtsplan der Messgebiete</h4>
       <Uebersichtsplan />
-    </>
+    </div>
   );
 }

@@ -1,0 +1,17 @@
+.start {
+  padding: 1rem;
+}
+
+.start h4.bildueberschrift {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.start .bildtext {
+  font-style: italic;
+}
+
+.start .bildquelle {
+  font-size: 0.8rem;
+  font-style: italic;
+}

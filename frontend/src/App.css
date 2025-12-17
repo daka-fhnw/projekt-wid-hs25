@@ -3,61 +3,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-  background-color: rgb(247, 230, 0);
-}
-
-header img {
-  cursor: pointer;
-}
-
-header .elternelement1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-header .elternelement2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-header button {
-  width: 14rem;
-  padding: 0.5rem;
-  border: 0;
-  background-color: transparent;
-  font-weight: bold;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-bottom: 5px solid transparent;
-}
-header button.active {
-  border-color: black;
-}
-/* Veränderung Button bei Berührung mit Pfeil */
-header button:hover {
-  background-color: rgb(247, 200, 0);
-}
-
-main {
-  padding: 1rem;
-}
-
-h4.bildueberschrift {
-  font-weight: bold;
-  margin-bottom: 0;
-}
-
-.bildtext {
-  font-style: italic;
-}
-
-.bildquelle {
-  font-size: 0.8rem;
-  font-style: italic;
+h2 {
+  margin-top: 0;
 }
 
 .meldung {

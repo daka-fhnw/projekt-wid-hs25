@@ -1,3 +1,4 @@
+import "./Fokusfrage.css";
 import { useVegaEmbed } from "react-vega";
 import { useEffect, useRef, useState } from "react";
 import spec from "./assets/fokusfrage.json";
@@ -45,7 +46,7 @@ export function Fokusfrage() {
     embed?.view.data("values", data).runAsync();
   }, [embed, data]);
   return (
-    <>
+    <div className="fokusfrage">
       <h2>Die Fokusfrage</h2>
       <p>
         An welchem der vier Standorte waren im gesamten April 2024 anteilsmässig
@@ -64,6 +65,6 @@ export function Fokusfrage() {
         <div className="meldung fehler">Laden der Daten fehlgeschlagen!</div>
       )}
       <div ref={ref} />
-    </>
+    </div>
   );
 }
