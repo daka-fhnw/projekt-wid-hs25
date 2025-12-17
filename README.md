@@ -17,7 +17,7 @@ Die Daten sind frei verfügbar über das [Open Data Portal der Stadt Zürich](ht
 
 ## Entwickler-Setup
 
-Das Entwickler-Setup ist in den Beschreibungen der ensprechenden Unterverzeichnisse zu finden:
+Das Entwickler-Setup ist in den Beschreibungen der entsprechenden Unterverzeichnisse zu finden:
 
 - [frontend](#frontend)
 - [backend](#backend)
@@ -36,7 +36,7 @@ Im Unterverzeichnis "frontend" liegt die Umsetzung des Applikationsteils, der be
 
 ### Entwickler-Setup
 
-Um das Frontend starten zu können, muss [Node.js](https://nodejs.org/) installiert sein. Fü die Entwicklung wurde die Version 22.21.0 verwendet. Die Abhängigkeiten können dann über folgenden Befehl installiert werden:
+Um das Frontend starten zu können, muss [Node.js](https://nodejs.org/) installiert sein. Für die Entwicklung wurde die Version 22.21.0 verwendet. Die Abhängigkeiten können dann über folgenden Befehl installiert werden:
 
 > npm install
 
@@ -48,7 +48,7 @@ Alternativ kann aus dem Hauptverzeichnis des Projektes folgender Befehl ausgefü
 
 > npm run frontend
 
-Bei erfolgreichem Start, kann die Web-Applikation im Browser über folgende URL aufgerufen werden:
+Bei erfolgreichem Start kann die Web-Applikation im Browser über folgende URL aufgerufen werden:
 
 > http://localhost:5173/
 
@@ -70,11 +70,11 @@ _\*getestet mit diesen Versionen, andere Versionen funktionieren möglicherweise
 
 ## Backend
 
-Im Unterverzeichnis "backend" liegt die Umsetzung der API, die aufbereitete Daten für das [Frontend](#frontend) bereitstellt. Ein Aufbereitung ist notwendig, da der Umfang des Gesamtdatensatzes zu gross ist, um diesen im [Frontend](#frontend) direkt verarbeiten zu können. Das Backend wurde mit [Python](https://www.python.org/) basierend auf [FastAPI](https://fastapi.tiangolo.com/) umgesetzt. Die Bibliothek [pandas](https://pandas.pydata.org/) dient dazu den Gesamtdatensatz zu laden, zu filtern und für die API aufzubereiten. Der Gesamtdatensatz ist im Unterverzeichnis [Daten](#daten) abgelegt.
+Im Unterverzeichnis "backend" liegt die Umsetzung der API, die aufbereitete Daten für das [Frontend](#frontend) bereitstellt. Eine Aufbereitung ist notwendig, da der Umfang des Gesamtdatensatzes zu gross ist, um diesen im [Frontend](#frontend) direkt verarbeiten zu können. Das Backend wurde mit [Python](https://www.python.org/) basierend auf [FastAPI](https://fastapi.tiangolo.com/) umgesetzt. Die Bibliothek [pandas](https://pandas.pydata.org/) dient dazu den Gesamtdatensatz zu laden, zu filtern und für die API aufzubereiten. Der Gesamtdatensatz ist im Unterverzeichnis [Daten](#daten) abgelegt.
 
 ### Entwickler-Setup
 
-Um das Backend starten zu können, müssen [Python](https://www.python.org/) und die im nachfolgenden Abschnitt beschriebenen Abhängigkeiten installiert sein. Für die Entwicklung wurde Python 3.14.0 verwendet. Bei der Verwendung von Miniconda kann die Vorlage in der Datei "conda-setup.txt" im Hauptverzeichnis des Projektes verwendet werden. Aus dem Unterverzeichnis "backend" heraus, kann die Applikation dann mittels folgendem Befehl lokal gestartet werden:
+Um das Backend starten zu können, müssen [Python](https://www.python.org/) und die im nachfolgenden Abschnitt beschriebenen Abhängigkeiten installiert sein. Für die Entwicklung wurde Python 3.14.0 verwendet. Bei der Verwendung von Miniconda kann die Vorlage in der Datei "conda-setup.txt" im Hauptverzeichnis des Projektes verwendet werden. Aus dem Unterverzeichnis "backend" heraus, kann die Applikation dann mittels folgenden Befehls lokal gestartet werden:
 
 > fastapi dev main.py
 
@@ -82,7 +82,7 @@ Alternativ kann aus dem Hauptverzeichnis des Projektes folgender Befehl ausgefü
 
 > npm run backend
 
-Bei erfolgreichem Start, kann die REST-API im Browser über folgende URL angezeigt und getestet werden:
+Bei erfolgreichem Start kann die REST-API im Browser über folgende URL angezeigt und getestet werden:
 
 > http://localhost:8000/docs
 
