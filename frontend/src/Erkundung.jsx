@@ -6,18 +6,24 @@ import Slider from "@mui/material/Slider";
 import dayjs from "dayjs";
 import spec from "./assets/erkundung.json";
 
+// wandelt die Datumsobjekt vom Kalender ins korrekte Format für den Query-Parameter um
 function formatDateParam(date) {
   return date.format("YYYY-MM-DD");
 }
 
 export function Erkundung() {
+  const minStunde = 0;
+  const maxStunde = 23;
+  const minTemp = -20;
+  const maxTemp = 40;
+
   // verwenden der in der spec vorhandenen Daten als initialer Wert
   const [data, setData] = useState(spec.datasets.values);
   const [state, setState] = useState("");
   const [anfangsdatum, setAnfangsdatum] = useState(dayjs("2020-01-01"));
   const [enddatum, setEnddatum] = useState(dayjs("2025-12-31"));
-  const [zeiten, setZeiten] = useState([0, 23]);
-  const [temperaturen, setTemperaturen] = useState([-20, 40]);
+  const [zeiten, setZeiten] = useState([minStunde, maxStunde]);
+  const [temperaturen, setTemperaturen] = useState([minTemp, maxTemp]);
 
   useEffect(() => {
     // Nutzer informieren, dass Daten geladen werden
@@ -65,8 +71,9 @@ export function Erkundung() {
           <div className="meldung fehler">Laden der Daten fehlgeschlagen!</div>
         )}
         {state === "success" && (
-          <div className="meldung info">Erfolgreich aktualisiert.</div>
+          <div className="meldung erfolg">Erfolgreich aktualisiert.</div>
         )}
+
         <div ref={ref} />
       </div>
 
@@ -87,25 +94,33 @@ export function Erkundung() {
           sx={{ backgroundColor: "white" }}
         />
 
-        <h4>Stundenbereich</h4>
+        <h4>Stundenbereich (24h)</h4>
         <Slider
           value={zeiten}
           onChange={(_event, value) => setZeiten(value)}
-          valueLabelDisplay="auto"
+          valueLabelDisplay="off"
           sx={{ width: "100%" }}
-          min={0}
-          max={23}
+          min={minStunde}
+          max={maxStunde}
         />
+        <div className="wertebereich">
+          <div>{zeiten[0]}:00</div>
+          <div>{zeiten[1]}:00</div>
+        </div>
 
         <h4>Temperaturbereich</h4>
         <Slider
           value={temperaturen}
           onChange={(_event, value) => setTemperaturen(value)}
-          valueLabelDisplay="auto"
+          valueLabelDisplay="off"
           sx={{ width: "100%" }}
-          min={-20}
-          max={40}
+          min={minTemp}
+          max={maxTemp}
         />
+        <div className="wertebereich">
+          <div>{temperaturen[0]}°C</div>
+          <div>{temperaturen[1]}°C</div>
+        </div>
       </div>
     </div>
   );

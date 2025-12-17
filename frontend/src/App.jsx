@@ -13,10 +13,14 @@ import { Erkundung } from "./Erkundung.jsx";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 
+import "dayjs/locale/de";
+
+// Lokalisierung des Datumsformats gemäss:
+// https://mui.com/x/react-date-pickers/adapters-locale/
 function App() {
   const [page, setPage] = useState(0);
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="de">
       <Header page={page} setPage={setPage} />
       <main>
         {page === 0 && <Start />}
