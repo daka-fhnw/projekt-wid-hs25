@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 import "./Erkundung.css";
+import spec from "./assets/erkundung.json";
 
 
 export function Erkundung() {
+
+  // verwenden der in der spec vorhandenen Daten als initialer Wert
+  const [data, setData] = useState(spec.datasets.values);
+  const [state, setState] = useState("");
 
   const[anfangsdatum, setAnfangsdatum]=useState("2024-01-01")
   const[enddatum, setEnddatum]=useState("2024-01-01")
@@ -10,17 +15,21 @@ export function Erkundung() {
   const[endzeit, setEndzeit]=useState("10")
   const[mintemp, setMintemp]=useState("10")
   const[maxtemp, setMaxtemp]=useState("20")
+  // Nutzer informieren, dass Daten geladen werden
+  setState("loading");
  
 useEffect(() => {
-  console.log(
-    `http://localhost:8000/standorte/passanten-anzahl` +
+  fetch(
+      `http://localhost:8000/standorte/passanten-anzahl` +
     `?datum_von=${anfangsdatum}` +
     `&datum_bis=${enddatum}` +
     `&stunde_von=${anfangszeit}` +
     `&stunde_bis=${endzeit}` +
     `&temperatur_von=${mintemp}` +
-    `&temperatur_bis=${maxtemp}`)
+    `&temperatur_bis=${maxtemp}`)  
 }, [anfangsdatum, enddatum, anfangszeit, endzeit, mintemp, maxtemp]);
+
+
 
 
   return (
