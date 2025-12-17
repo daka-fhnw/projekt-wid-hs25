@@ -7,5 +7,7 @@
     "backend": "(cd backend && fastapi dev main.py)",
     "frontend": "(cd frontend && npm run dev)",
     "postinstall": "(cd frontend && npm install)"
+  },
+  "dependencies": {
   }
 }
