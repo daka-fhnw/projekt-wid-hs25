@@ -7,9 +7,8 @@ export function Erkundung() {
   // verwenden der in der spec vorhandenen Daten als initialer Wert
   const [data, setData] = useState(spec.datasets.values);
   const [state, setState] = useState("");
-
-  const [anfangsdatum, setAnfangsdatum] = useState("2000-01-01");
-  const [enddatum, setEnddatum] = useState("9999-12-31");
+  const [anfangsdatum, setAnfangsdatum] = useState("2022-01-01");
+  const [enddatum, setEnddatum] = useState("2025-12-31");
   const [anfangszeit, setAnfangszeit] = useState("0");
   const [endzeit, setEndzeit] = useState("23");
   const [mintemp, setMintemp] = useState("-20");

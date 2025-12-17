@@ -1,3 +1,4 @@
+import "./Header.css";
 import logo from "./assets/FHNW_Logo.jpg";
 
 export function Header({ page, setPage }) {
