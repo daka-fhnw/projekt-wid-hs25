@@ -56,19 +56,19 @@
     "values": [
       {
         "Standort": "Bahnhofstrasse (Mitte)",
-        "Anzahl Passanten": 705130
+        "Anzahl Passanten": 51214661
       },
       {
         "Standort": "Bahnhofstrasse (Nord)",
-        "Anzahl Passanten": 567071
+        "Anzahl Passanten": 33316648
       },
       {
         "Standort": "Bahnhofstrasse (S\u00fcd)",
-        "Anzahl Passanten": 453965
+        "Anzahl Passanten": 30223050
       },
       {
         "Standort": "Lintheschergasse",
-        "Anzahl Passanten": 223586
+        "Anzahl Passanten": 5413080
       }
     ]
   }
