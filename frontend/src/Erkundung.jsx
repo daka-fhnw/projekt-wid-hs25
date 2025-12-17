@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useVegaEmbed } from "react-vega";
+import { useEffect, useRef, useState } from "react";
 import "./Erkundung.css";
 import spec from "./assets/erkundung.json";
 
@@ -15,10 +16,12 @@ export function Erkundung() {
   const[endzeit, setEndzeit]=useState("10")
   const[mintemp, setMintemp]=useState("10")
   const[maxtemp, setMaxtemp]=useState("20")
-  // Nutzer informieren, dass Daten geladen werden
-  setState("loading");
+
  
 useEffect(() => {
+  // Nutzer informieren, dass Daten geladen werden
+  setState("loading");
+  // Laden der Daten für die Erkundung
   fetch(
       `http://localhost:8000/standorte/passanten-anzahl` +
     `?datum_von=${anfangsdatum}` +
@@ -27,10 +30,24 @@ useEffect(() => {
     `&stunde_bis=${endzeit}` +
     `&temperatur_von=${mintemp}` +
     `&temperatur_bis=${maxtemp}`)  
+    .then((response)=> response.json())
+    .then ((json)=> {
+      setData(json);
+      setState("success") 
+    })
+    .catch(()=> {
+      setState("failed")
+    })
 }, [anfangsdatum, enddatum, anfangszeit, endzeit, mintemp, maxtemp]);
 
 
-
+// Für dynamische Daten zweiten Ansatz von react-vega mit useVegaEmbed nutzen
+  // (gemäss README auf https://github.com/vega/react-vega)
+const ref = useRef(null);
+const embed = useVegaEmbed({ ref, spec });
+useEffect(() => {
+  embed?.view.data("values", data).runAsync();
+}, [embed, data]);
 
   return (
     <div className="erkundung">
@@ -109,8 +126,13 @@ useEffect(() => {
         <input type="number" step="1" value={maxtemp}
         onChange={(x) => setMaxtemp(x.target.value)}/>
       </menu>
-
-      <main>Platz für Visualisierung</main>
+{state === "loading" && (
+        <div className="meldung info">Daten werden geladen...</div>
+      )}
+      {state === "failed" && (
+        <div className="meldung fehler">Laden der Daten fehlgeschlagen!</div>
+      )}
+      <div ref={ref} />
 
     </div>
   );
