@@ -13,7 +13,11 @@ Die Daten sind frei verfügbar über das [Open Data Portal der Stadt Zürich](ht
 
 ## Projektziel
 
-==TODO==
+Das Ziel des Projekts ist die praktische Anwendung der Inhalte des Moduls 3050 „Webprogrammierung und interaktive Datenvisualisierung“ im Rahmen des Bachelorstudiums Geomatik an der FHNW. Auf Basis der Modulinhalte soll eine Web-Applikation (Frontend und Backend) entwickelt werden.
+Im Projekt wird über die Erhebung der Passantenfrequenz an bestimmten Strassen in Zürich informiert. Die Applikation soll eine gewählte Fokusfrage mithilfe einer geeigneten Visualisierung beantworten (Header: Die Fokusfrage). Für diese Applikation wird die Fokusfrage behandelt: An welchem der vier Standorte waren im gesamten April 2024 anteilsmässig die meisten Kinder unterwegs?
+Darüber hinaus soll die Applikation den Nutzenden die Möglichkeit bieten, den gesamten Datensatz zu erkunden, um weitere Vergleiche anzustellen oder zusätzliche Fragestellungen zu untersuchen (Header: Die Erkundung).
+Zusätzlich enthält die Applikation einen allgemeinen Teil, der grundlegende Informationen zur Erhebung der Passantenfrequenz in Zürich bereitstellt (Header: Das Projekt).
+
 
 ## Entwickler-Setup
 
