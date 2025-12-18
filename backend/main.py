@@ -62,6 +62,9 @@ def get_standorte_kinder_anteil(
     data['Anteil Kinder'] = data['Anzahl Kinder'] / data['Anzahl Passanten']
     # NaN-Werte in Spalte 'Anteil Kinder' durch 0 ersetzen
     data['Anzahl Kinder'] = data['Anzahl Kinder'].fillna(0)
+    # Spalte mit höchstem Kinderanteil markieren
+    max_anteil = data['Anteil Kinder'].max()
+    data['Höchster'] = data['Anteil Kinder'] == max_anteil
     # In JSON umwandeln
     json = data.to_json(orient='records')
     # Direkt als Inhalt zurückgeben mit Media-Type 'application-json' 

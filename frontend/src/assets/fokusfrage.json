@@ -17,6 +17,13 @@
     "size": 80
   },
   "encoding": {
+    "color": {
+      "condition": {
+        "test": "datum.H\u00f6chster",
+        "value": "purple"
+      },
+      "value": "steelblue"
+    },
     "tooltip": [
       {
         "field": "Anteil Kinder",
@@ -74,28 +81,32 @@
         "Anzahl Kinder": 20686,
         "Anzahl Erwachsene": 1099830,
         "Anzahl Passanten": 1120516,
-        "Anteil Kinder": 0.01846113754734426
+        "Anteil Kinder": 0.01846113754734426,
+        "H\u00f6chster": false
       },
       {
         "Standort": "Bahnhofstrasse (Nord)",
         "Anzahl Kinder": 7070,
         "Anzahl Erwachsene": 866905,
         "Anzahl Passanten": 873975,
-        "Anteil Kinder": 0.008089476243599646
+        "Anteil Kinder": 0.008089476243599646,
+        "H\u00f6chster": false
       },
       {
         "Standort": "Bahnhofstrasse (S\u00fcd)",
         "Anzahl Kinder": 21152,
         "Anzahl Erwachsene": 669023,
         "Anzahl Passanten": 690175,
-        "Anteil Kinder": 0.03064729959792806
+        "Anteil Kinder": 0.03064729959792806,
+        "H\u00f6chster": true
       },
       {
         "Standort": "Lintheschergasse",
         "Anzahl Kinder": 3310,
         "Anzahl Erwachsene": 313929,
         "Anzahl Passanten": 317239,
-        "Anteil Kinder": 0.010433773905478205
+        "Anteil Kinder": 0.010433773905478205,
+        "H\u00f6chster": false
       }
     ]
   }
